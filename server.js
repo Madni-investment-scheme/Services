@@ -1,201 +1,205 @@
 const express = require('express');
-const path = require('path');
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-// Static files (agar CSS/JS alag rakhna ho)
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Services Data (Images ke mutabiq)
+// Services data with description
 const services = [
-  { id: 'tiktok_foflowers', name: 'TikTok Foflowers (1000)', price: 1500 },
-  { id: 'tiktok_followers', name: 'TikTok Followers (1000)', price: 999 },
-  { id: 'tiktok_views', name: 'TikTok Views (1000)', price: 50 },
-  { id: 'tiktok_likes', name: 'TikTok Likes (1000)', price: 120 },
-  { id: 'youtube_subscribers', name: 'YouTube Subscribers (1000)', price: 1200 },
-  { id: 'youtube_watchtime', name: 'YouTube Watch Time (500 Hours)', price: 800 },
-  { id: 'instagram_followers', name: 'Instagram Followers (1000)', price: 120 },
-  { id: 'instagram_likes', name: 'Instagram Likes (1000)', price: 80 }
+    { id: 1, name: 'TikTok Likes (1000)', price: 120, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 1-3 Hours -- Guarenty Puri Zindagi Ki ♻️' },
+    { id: 2, name: 'Instagram Followers (1000)', price: 250, desc: 'High Quality Real Followers -- Non-Drop -- Start Time: 0-1 Hour.' },
+    { id: 3, name: 'TikTok Followers (1000)', price: 300, desc: 'Active Profiles -- Instant Start -- Safe & Secure.' }
 ];
 
-// Helper function to generate Auto Order ID
-function generateOrderId() {
-  const randomNum = Math.floor(100000 + Math.random() * 900000);
-  return `ORD-${randomNum}`;
-}
+app.get('/api/services', (req, res) => {
+    res.json(services);
+});
 
-// Home Route - Render HTML Form
 app.get('/', (req, res) => {
-  const orderId = generateOrderId();
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>M.Madni Ansari - Services</title>
+            <style>
+                body {
+                    background-color: #0b132b;
+                    color: #fff;
+                    font-family: Arial, sans-serif;
+                    padding: 20px;
+                    display: flex;
+                    justify-content: center;
+                }
+                .container {
+                    width: 100%;
+                    max-width: 400px;
+                    background: #1c2541;
+                    padding: 20px;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+                }
+                h2 { text-align: center; font-size: 20px; margin-bottom: 15px; }
+                .notice {
+                    background: #22335f;
+                    padding: 10px;
+                    border-radius: 8px;
+                    font-size: 12px;
+                    color: #a5c4d4;
+                    margin-bottom: 15px;
+                    border-left: 4px solid #3a86ff;
+                }
+                .form-group {
+                    margin-bottom: 15px;
+                }
+                label {
+                    display: block;
+                    font-size: 13px;
+                    margin-bottom: 5px;
+                    color: #cfdbd5;
+                }
+                input, select {
+                    width: 100%;
+                    padding: 10px;
+                    background: #0b132b;
+                    border: 1px solid #3a506b;
+                    border-radius: 6px;
+                    color: #fff;
+                    font-size: 14px;
+                    box-sizing: border-box;
+                }
+                .desc-box {
+                    background: #0b132b;
+                    border: 1px solid #3a506b;
+                    padding: 10px;
+                    border-radius: 6px;
+                    margin-top: 5px;
+                    font-size: 12px;
+                    color: #8ecae6;
+                }
+                .btn {
+                    width: 100%;
+                    background: #3a86ff;
+                    color: white;
+                    border: none;
+                    padding: 12px;
+                    border-radius: 6px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    margin-top: 10px;
+                }
+                .btn:hover { background: #2667cc; }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h2>Power Of M.Madni Ansari</h2>
+                <div class="notice">
+                    <b>Important Notice:</b> Orders are processed within 1-2 hours. Please make sure your account is public before submitting the link.
+                </div>
 
-  const servicesOptions = services.map(s => 
-    `<option value="${s.id}" data-price="${s.price}">${s.name} - Rs. ${s.price}</option>`
-  ).join('');
+                <div class="form-group">
+                    <label>Order ID (Auto-Generated)</label>
+                    <input type="text" id="orderId" readonly style="color: #2ec4b6; font-weight: bold;">
+                </div>
 
-  const html = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>M.Madni Ansari - Services</title>
-        <style>
-            body {
-                background-color: #0f172a;
-                font-family: Arial, sans-serif;
-                color: #ffffff;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 100vh;
-                margin: 0;
-            }
-            .card {
-                background-color: #1e293b;
-                padding: 25px;
-                border-radius: 12px;
-                width: 100%;
-                max-width: 400px;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            }
-            h2 {
-                text-align: center;
-                color: #f8fafc;
-                margin-bottom: 20px;
-            }
-            .notice {
-                background-color: #1e3a8a;
-                padding: 12px;
-                border-radius: 6px;
-                font-size: 13px;
-                margin-bottom: 20px;
-                color: #93c5fd;
-            }
-            label {
-                display: block;
-                margin-top: 12px;
-                font-size: 14px;
-                color: #cbd5e1;
-            }
-            input, select {
-                width: 100%;
-                padding: 10px;
-                margin-top: 5px;
-                background-color: #0f172a;
-                border: 1px solid #334155;
-                color: #ffffff;
-                border-radius: 6px;
-                box-sizing: border-box;
-            }
-            .order-id {
-                color: #4ade80;
-                font-weight: bold;
-            }
-            .btn {
-                background-color: #3b82f6;
-                color: white;
-                border: none;
-                width: 100%;
-                padding: 12px;
-                margin-top: 20px;
-                border-radius: 6px;
-                font-size: 16px;
-                cursor: pointer;
-                font-weight: bold;
-            }
-            .btn:hover {
-                background-color: #2563eb;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="card">
-            <h2>Power Of M.Madni Ansari</h2>
-            <div class="notice">
-                <strong>Important Notice:</strong> Orders are processed within 1-2 hours. Please make sure your account is public before submitting the link.
+                <div class="form-group">
+                    <label>Select Service</label>
+                    <select id="serviceSelect" onchange="updateServiceDetails()">
+                        <option value="">- Select a Service -</option>
+                    </select>
+                </div>
+
+                <!-- Description & Price Box -->
+                <div class="form-group" style="background: #131b2e; padding: 10px; border-radius: 8px; border: 1px solid #22335f;">
+                    <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold;">
+                        <span>Price per Pack:</span>
+                        <span id="priceDisplay" style="color: #2ec4b6;">Rs. 0</span>
+                    </div>
+                    <div class="desc-box" id="descDisplay">
+                        Select a service to see details...
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Target Profile / Video Link</label>
+                    <input type="text" id="targetLink" placeholder="https://...">
+                </div>
+
+                <div class="form-group">
+                    <label>Quantity Required</label>
+                    <input type="number" id="quantity" value="1000" oninput="calculateTotal()">
+                </div>
+
+                <div class="form-group">
+                    <label>Total Estimated Price:</label>
+                    <input type="text" id="totalPrice" readonly style="color: #2ec4b6; font-weight: bold;" value="Rs. 0">
+                </div>
+
+                <button class="btn" onclick="submitOrder()">Submit Order via Chat</button>
             </div>
 
-            <form action="/submit-order" method="POST">
-                <label>Order ID (Auto-Generated)</label>
-                <input type="text" name="orderId" value="${orderId}" readonly class="order-id">
+            <script>
+                const servicesData = ${JSON.stringify(services)};
 
-                <label>Select Service</label>
-                <select name="service" id="serviceSelect" required onchange="updatePrice()">
-                    <option value="" disabled selected>-- Select a Service --</option>
-                    ${servicesOptions}
-                </select>
+                // Auto-generate Order ID
+                document.getElementById('orderId').value = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
 
-                <label>Price per Pack:</label>
-                <input type="text" id="pricePerPack" value="Rs. 0" readonly style="color: #4ade80;">
+                // Populate Dropdown
+                const selectTag = document.getElementById('serviceSelect');
+                servicesData.forEach(s => {
+                    let opt = document.createElement('option');
+                    opt.value = s.id;
+                    opt.textContent = s.name + ' - Rs. ' + s.price;
+                    selectTag.appendChild(opt);
+                });
 
-                <label>Target Profile / Video Link</label>
-                <input type="url" name="targetLink" placeholder="https://..." required>
+                function updateServiceDetails() {
+                    const selectedId = selectTag.value;
+                    const service = servicesData.find(s => s.id == selectedId);
+                    
+                    if (service) {
+                        document.getElementById('priceDisplay').textContent = 'Rs. ' + service.price;
+                        document.getElementById('descDisplay').textContent = service.desc;
+                        calculateTotal();
+                    } else {
+                        document.getElementById('priceDisplay').textContent = 'Rs. 0';
+                        document.getElementById('descDisplay').textContent = 'Select a service to see details...';
+                        document.getElementById('totalPrice').value = 'Rs. 0';
+                    }
+                }
 
-                <label>Quantity Required</label>
-                <input type="number" name="quantity" id="quantity" value="1000" min="100" oninput="updatePrice()" required>
+                function calculateTotal() {
+                    const selectedId = selectTag.value;
+                    const service = servicesData.find(s => s.id == selectedId);
+                    const qty = document.getElementById('quantity').value || 0;
+                    
+                    if (service) {
+                        let total = (service.price / 1000) * qty;
+                        document.getElementById('totalPrice').value = 'Rs. ' + total;
+                    }
+                }
 
-                <label>Total Estimated Price:</label>
-                <input type="text" id="totalPrice" value="Rs. 0" readonly style="color: #4ade80; font-weight: bold;">
+                function submitOrder() {
+                    const orderId = document.getElementById('orderId').value;
+                    const serviceName = selectTag.options[selectTag.selectedIndex].text;
+                    const link = document.getElementById('targetLink').value;
+                    const qty = document.getElementById('quantity').value;
+                    const total = document.getElementById('totalPrice').value;
 
-                <label>Select Payment Method</label>
-                <select name="paymentMethod" required>
-                    <option value="" disabled selected>-- Choose Payment --</option>
-                    <option value="EasyPaisa">EasyPaisa</option>
-                    <option value="JazzCash">JazzCash</option>
-                    <option value="Nayapay / Bank Transfer">Nayapay / Bank Transfer</option>
-                </select>
+                    if(!selectTag.value || !link) {
+                        alert('Please select a service and provide the link!');
+                        return;
+                    }
 
-                <button type="submit" class="btn">Submit Order via Chat</button>
-            </form>
-        </div>
-
-        <script>
-            function updatePrice() {
-                const select = document.getElementById('serviceSelect');
-                const selectedOption = select.options[select.selectedIndex];
-                const basePrice = parseInt(selectedOption.getAttribute('data-price')) || 0;
-                const quantity = parseInt(document.getElementById('quantity').value) || 1000;
-
-                const calculatedPrice = (basePrice * quantity) / 1000;
-
-                document.getElementById('pricePerPack').value = "Rs. " + basePrice;
-                document.getElementById('totalPrice').value = "Rs. " + calculatedPrice;
-            }
-        </script>
-    </body>
-    </html>
-  `;
-  res.send(html);
+                    const message = \`New Order Details:%0A- Order ID: \${orderId}%0A- Service: \${serviceName}%0A- Link: \${link}%0A- Quantity: \${qty}%0A- Total: \${total}\`;
+                    window.open('https://wa.me/923137803400?text=' + message, '_blank');
+                }
+            </script>
+        </body>
+        </html>
+    `);
 });
 
-// Submit Order Route - WhatsApp Integration
-app.post('/submit-order', (req, res) => {
-  const { orderId, service, targetLink, quantity, paymentMethod } = req.body;
-
-  const selectedServiceObj = services.find(s => s.id === service);
-  const serviceName = selectedServiceObj ? selectedServiceObj.name : service;
-  const basePrice = selectedServiceObj ? selectedServiceObj.price : 0;
-  const totalPrice = (basePrice * quantity) / 1000;
-
-  // Aapka WhatsApp Number (Country code 92 ke sath)
-  const whatsappNumber = "923137803400"; 
-  
-  const message = `--- NEW ORDER RECEIVED ---%0A%0A` +
-                  `Order ID: ${orderId}%0A` +
-                  `Service: ${serviceName} - RS. ${basePrice}%0A` +
-                  `Target Link: ${targetLink}%0A` +
-                  `Quantity Pack: ${quantity}%0A` +
-                  `Total Price: Rs. ${totalPrice}%0A` +
-                  `Payment Method: ${paymentMethod}%0A%0A` +
-                  `Please confirm my order.`;
-
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
-  res.redirect(whatsappUrl);
-});
-
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+    console.log('Server is running on port ' + PORT);
 });
