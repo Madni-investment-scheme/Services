@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Services data with description
+// Services data with description and limits
 const services = [
     { id: 1, name: 'TikTok Likes (1000)', price: 120, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 1-3 Hours -- Guarenty Puri Zindagi Ki ♻️' },
-{ id: 1, name: 'Tiktok Views (1000)', price: 40, min: 500, max: 1000, desc: 'Best Views Start in 0-5 minutes -- Fast Speed -- Complete In 1-3 Hours -- Guarenty Puri Zindagi Ki ♻️' },
-    { id: 3, name: 'TikTok Followers (1000)', price: 300, desc: 'Active Profiles -- Instant Start -- Safe & Secure.' }
+    { id: 2, name: 'Instagram Followers (1000)', price: 250, min: 50, max: 5000, desc: 'High Quality Real Followers -- Non-Drop -- Start Time: 0-1 Hour.' },
+    { id: 3, name: 'TikTok Followers (1000)', price: 300, min: 200, max: 20000, desc: 'Active Profiles -- Instant Start -- Safe & Secure.' }
 ];
 
 app.get('/api/services', (req, res) => {
@@ -76,6 +76,12 @@ app.get('/', (req, res) => {
                     font-size: 12px;
                     color: #8ecae6;
                 }
+                .limit-text {
+                    font-size: 11px;
+                    color: #2ec4b6;
+                    margin-top: 4px;
+                    display: block;
+                }
                 .btn {
                     width: 100%;
                     background: #3a86ff;
@@ -128,6 +134,7 @@ app.get('/', (req, res) => {
                 <div class="form-group">
                     <label>Quantity Required</label>
                     <input type="number" id="quantity" value="1000" oninput="calculateTotal()">
+                    <span class="limit-text" id="limitDisplay">Min: 0 - Max: 0</span>
                 </div>
 
                 <div class="form-group">
@@ -170,10 +177,14 @@ app.get('/', (req, res) => {
                     if (service) {
                         document.getElementById('priceDisplay').textContent = 'Rs. ' + service.price;
                         document.getElementById('descDisplay').textContent = service.desc;
+                        document.getElementById('limitDisplay').textContent = 'Min: ' + service.min + ' - Max: ' + service.max;
+                        document.getElementById('quantity').min = service.min;
+                        document.getElementById('quantity').max = service.max;
                         calculateTotal();
                     } else {
                         document.getElementById('priceDisplay').textContent = 'Rs. 0';
                         document.getElementById('descDisplay').textContent = 'Select a service to see details...';
+                        document.getElementById('limitDisplay').textContent = 'Min: 0 - Max: 0';
                         document.getElementById('totalPrice').value = 'Rs. 0';
                     }
                 }
@@ -196,9 +207,15 @@ app.get('/', (req, res) => {
                     const qty = document.getElementById('quantity').value;
                     const total = document.getElementById('totalPrice').value;
                     const payment = document.getElementById('paymentMethod').value;
+                    const service = servicesData.find(s => s.id == selectTag.value);
 
                     if(!selectTag.value || !link || !payment) {
                         alert('Please fill all fields and select a payment method!');
+                        return;
+                    }
+
+                    if (service && (parseInt(qty) < service.min || parseInt(qty) > service.max)) {
+                        alert('Quantity must be between ' + service.min + ' and ' + service.max);
                         return;
                     }
 
