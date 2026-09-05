@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Services Data (Images ke mutabiq)
 const services = [
-  { id: 'tiktok_foflowers', name: 'TikTok Foflowers (1000)', price: 1550 },
+  { id: 'tiktok_foflowers', name: 'TikTok Foflowers (1000)', price: 1500 },
   { id: 'tiktok_followers', name: 'TikTok Followers (1000)', price: 999 },
   { id: 'tiktok_views', name: 'TikTok Views (1000)', price: 50 },
   { id: 'tiktok_likes', name: 'TikTok Likes (1000)', price: 120 },
