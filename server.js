@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 const services = [
     { id: 1, name: 'TikTok Likes (1000)', price: 120, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 1-3 Hours -- Guarenty Puri Zindagi Ki ♻️' },
     { id: 2, name: 'Instagram Followers (1000)', price: 250, desc: 'High Quality Real Followers -- Non-Drop -- Start Time: 0-1 Hour.' },
-    { id: 3, name: 'TikTok Views (1000)', price: 40, desc: 'Best Views Start in 0-5 minutes -- Fast Speed -- Complete In 1-3 Hours -- Guarenty Puri Zindagi Ki ♻️' }
+    { id: 3, name: 'TikTok Views (1000)', price: 40, desc: 'Best Views Start in 0-5 minutes -- Fast Speed -- Complete In 1-3 Hours -- Guarenty Puri Zindagi Ki ♻️' } ,
     { id: 4, name: 'TikTok Followers (1000)', price: 300, desc: 'Active Profiles -- Instant Start -- Safe & Secure.' }
 ];
 
