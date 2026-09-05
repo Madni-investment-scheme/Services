@@ -1,0 +1,12 @@
+{
+  "name": "m-madni-ansari-store",
+  "version": "1.0.0",
+  "description": "Social Media Services Order App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
