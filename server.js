@@ -6,8 +6,7 @@ const PORT = process.env.PORT || 3000;
 const services = [
     { id: 1, name: 'TikTok Likes (1000)', price: 120, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 1-3 Hours -- Guarenty Puri Zindagi Ki ♻️' },
     { id: 2, name: 'Instagram Followers (1000)', price: 250, desc: 'High Quality Real Followers -- Non-Drop -- Start Time: 0-1 Hour.' },
-    { id: 3, name: 'TikTok Views (1000)', price: 40, desc: 'Best Views Start in 0-5 minutes -- Fast Speed -- Complete In 1-3 Hours -- Guarenty Puri Zindagi Ki ♻️' } ,
-    { id: 4, name: 'TikTok Followers (1000)', price: 300, desc: 'Active Profiles -- Instant Start -- Safe & Secure.' }
+    { id: 3, name: 'TikTok Followers (1000)', price: 300, desc: 'Active Profiles -- Instant Start -- Safe & Secure.' }
 ];
 
 app.get('/api/services', (req, res) => {
@@ -136,6 +135,16 @@ app.get('/', (req, res) => {
                     <input type="text" id="totalPrice" readonly style="color: #2ec4b6; font-weight: bold;" value="Rs. 0">
                 </div>
 
+                <div class="form-group">
+                    <label>Select Payment Method</label>
+                    <select id="paymentMethod">
+                        <option value="">- Choose Payment -</option>
+                        <option value="JazzCash">JazzCash</option>
+                        <option value="EasyPaisa">EasyPaisa</option>
+                        <option value="Bank Transfer">Bank Transfer</option>
+                    </select>
+                </div>
+
                 <button class="btn" onclick="submitOrder()">Submit Order via Chat</button>
             </div>
 
@@ -186,13 +195,14 @@ app.get('/', (req, res) => {
                     const link = document.getElementById('targetLink').value;
                     const qty = document.getElementById('quantity').value;
                     const total = document.getElementById('totalPrice').value;
+                    const payment = document.getElementById('paymentMethod').value;
 
-                    if(!selectTag.value || !link) {
-                        alert('Please select a service and provide the link!');
+                    if(!selectTag.value || !link || !payment) {
+                        alert('Please fill all fields and select a payment method!');
                         return;
                     }
 
-                    const message = \`New Order Details:%0A- Order ID: \${orderId}%0A- Service: \${serviceName}%0A- Link: \${link}%0A- Quantity: \${qty}%0A- Total: \${total}\`;
+                    const message = \`Order ID: \${orderId}%0AService: \${serviceName}%0ATarget Link: \${link}%0AQuantity Pack: \${qty}%0ATotal Price: \${total}%0APayment Method: \${payment}%0A%0APlease confirm my order.\`;
                     window.open('https://wa.me/923137803400?text=' + message, '_blank');
                 }
             </script>
