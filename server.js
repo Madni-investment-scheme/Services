@@ -4,9 +4,9 @@ const PORT = process.env.PORT || 3000;
 
 // Services data with description and limits
 const services = [
-    { id: 1, name: 'TikTok Likes (1000)', price: 120, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 1-3 Hours -- Guarenty Puri Zindagi Ki ♻️' },
-    { id: 2, name: 'Instagram Followers (1000)', price: 250, min: 50, max: 5000, desc: 'High Quality Real Followers -- Non-Drop -- Start Time: 0-1 Hour.' },
-    { id: 3, name: 'TikTok Followers (1000)', price: 300, min: 200, max: 20000, desc: 'Active Profiles -- Instant Start -- Safe & Secure.' }
+    { id: 1, name: 'TikTok Likes (1000)', price: 80, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes -- Guarenty Bilkul Bhi Ni Hai' },
+    { id: 2, name: 'Tiktok Views (1000)', price: 15, min: 100, max: 5000, desc: 'High Quality Views -- Guarantee Bilkul Bhi Ni Hai-- Start Time: 0-1 Hour.' },
+    { id: 3, name: 'TikTok Followers (1000)', price: 430, min: 100, max: 20000, desc: 'Tiktok Real Account Followers-- Instant Start -- Safe & Secure --Complete in 30 minutes --Guarenty Bilkul Bhi Ni.' }
 ];
 
 app.get('/api/services', (req, res) => {
