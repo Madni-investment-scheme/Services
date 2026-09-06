@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>M.Madni Ansari - Services</title>
+            <title>M.Madni Ansari's Website</title>
             <style>
                 body {
                     background-color: #0b132b;
