@@ -9,7 +9,7 @@ const services = [
     { id: 3, name: 'TikTok Followers (1000)', price: 430, min: 100, max: 20000, desc: 'Tiktok Real Account Followers-- Instant Start -- Safe & Secure --Complete in 30 minutes --Guarenty Bilkul Bhi Ni Khatam Ya Kam Bhi Ho Sakte Hain-.' },
     { id: 4, name: 'Whatsapp Channel Members (1000)', price: 110, min: 50, max: 20000, desc: 'Whatsapp Channel Members (Global) Instant Start -- Fast Speed -- Complete In 20 minutes --HQ Profiles-- Guarenty Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-' },
     { id: 1, name: 'TikTok Uk Account (1)', price: 550, desc: 'Tiktok Uk Account Country(United Kingdom) Account Delivery Within 1 Day After Order Gmail& Password Aapka Hoga Or Aap ne ye whatsapp per order karte waqat send karna hai-' },
-    { id: 1, name: 'TikTok Likes (1000)', price: 80, min: 100, max: 10000, desc: 'Tiktok Usa Account Country(United States) Account Delivery Within 1 Day After Order Gmail& Password Aapka Hoga Or Aap ne ye whatsapp per order karte waqat send karna hai-' },
+    { id: 1, name: 'TikTok Usa Account (1)', price: 550, desc: 'Tiktok Usa Account Country(United States) Account Delivery Within 1 Day After Order Gmail& Password Aapka Hoga Or Aap ne ye whatsapp per order karte waqat send karna hai-' },
 ];
 
 app.get('/api/services', (req, res) => {
