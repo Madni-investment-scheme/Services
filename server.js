@@ -108,7 +108,7 @@ app.get('/', (req, res) => {
             <div class="container">
                 <h2>Power Of M.Madni Ansari</h2>
                 <div class="notice">
-                    <b>Important Notice:</b> Orders are processed within 1-2 hours. Please make sure your account is public before submitting the link.
+                    <b>Important Notice:</b> Orders are processed within 1-2 hours. Please make sure your account is public before submitting the link And Ager kisi k likes,views wagera main se koi bhi guarantee wali cheez kam hoti hai to wo whatsapp per contact kare apni Thanks Shukriya Jazak Allah.
                 </div>
 
                 <div class="form-group">
