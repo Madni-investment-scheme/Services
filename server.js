@@ -11,6 +11,7 @@ const services = [
     { id: 4, name: 'Tiktok Views (1000)', price: 15, min: 100, max: 5000, desc: 'High Quality Views -- Guarantee Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-- Start Time: 0-1 Hour.' },
     { id: 5, name: 'TikTok Followers (1000)', price: 430, min: 100, max: 20000, desc: 'Tiktok Real Account Followers-- Instant Start -- Safe & Secure --Complete in 30 minutes --Guarenty Bilkul Bhi Ni Khatam Ya Kam Bhi Ho Sakte Hain-.' },
     { id: 6, name: 'Whatsapp Channel Members (1000)', price: 110, min: 50, max: 20000, desc: 'Whatsapp Channel Members (Global) Instant Start -- Fast Speed -- Complete In 20 minutes --HQ Profiles-- Guarenty Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-' },
+    { id: 7, name: 'Instagram Followers Guarantee (1000)', price: 950, min: 20, max: 1000000, desc: 'Best Instagram Followers (Old Acc) |500k/day| -- Fast Speed -- Complete In 7-9 hours -- Guarenty Puri Zindagi ki hai ager kam ho jayen to dubara complete karwa sakte ho-' },
     
 ];
 
