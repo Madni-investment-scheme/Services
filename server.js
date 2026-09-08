@@ -5,12 +5,12 @@ const PORT = process.env.PORT || 3000;
 // Services data with description and limits
 const services = [
     { id: 1, name: 'TikTok Likes (1000)', price: 80, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes -- Guarenty Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-' },
-    { id: 1, name: 'TikTok Likes Guarantee(1000)', price: 210, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes -- Guarenty Puri zindagi ki hai kabhi kam hon ussi waqat wapis pure karwao waise to zida tar kam hote he ni hain-' },
+    { id: 2, name: 'TikTok Likes Guarantee(1000)', price: 210, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes -- Guarenty Puri zindagi ki hai kabhi kam hon ussi waqat wapis pure karwao waise to zida tar kam hote he ni hain-' },
     
-    { id: 1, name: 'TikTok Views Guarantee (1000)', price: 40, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes -- Guarenty Puri Zindagi ki hai ager kam ho jayen to dubara complete karwa sakte ho-' },
-    { id: 2, name: 'Tiktok Views (1000)', price: 15, min: 100, max: 5000, desc: 'High Quality Views -- Guarantee Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-- Start Time: 0-1 Hour.' },
-    { id: 3, name: 'TikTok Followers (1000)', price: 430, min: 100, max: 20000, desc: 'Tiktok Real Account Followers-- Instant Start -- Safe & Secure --Complete in 30 minutes --Guarenty Bilkul Bhi Ni Khatam Ya Kam Bhi Ho Sakte Hain-.' },
-    { id: 4, name: 'Whatsapp Channel Members (1000)', price: 110, min: 50, max: 20000, desc: 'Whatsapp Channel Members (Global) Instant Start -- Fast Speed -- Complete In 20 minutes --HQ Profiles-- Guarenty Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-' },
+    { id: 3, name: 'TikTok Views Guarantee (1000)', price: 40, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes -- Guarenty Puri Zindagi ki hai ager kam ho jayen to dubara complete karwa sakte ho-' },
+    { id: 4, name: 'Tiktok Views (1000)', price: 15, min: 100, max: 5000, desc: 'High Quality Views -- Guarantee Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-- Start Time: 0-1 Hour.' },
+    { id: 5, name: 'TikTok Followers (1000)', price: 430, min: 100, max: 20000, desc: 'Tiktok Real Account Followers-- Instant Start -- Safe & Secure --Complete in 30 minutes --Guarenty Bilkul Bhi Ni Khatam Ya Kam Bhi Ho Sakte Hain-.' },
+    { id: 6, name: 'Whatsapp Channel Members (1000)', price: 110, min: 50, max: 20000, desc: 'Whatsapp Channel Members (Global) Instant Start -- Fast Speed -- Complete In 20 minutes --HQ Profiles-- Guarenty Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-' },
     
 ];
 
