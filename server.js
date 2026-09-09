@@ -5,14 +5,18 @@ const PORT = process.env.PORT || 3000;
 // Services data with description and limits
 const services = [
     { id: 1, name: 'TikTok Likes Cheap Rate (1000)', price: 80, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes -- Guarenty Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-' },
-    { id: 2, name: 'TikTok Likes Guarantee(1000)', price: 210, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes -- Guarenty Puri zindagi ki hai kabhi kam hon ussi waqat wapis pure karwao waise to zida tar kam hote he ni hain-' },
+    { id: 2, name: 'TikTok Likes Lifetime Guarantee(1000)', price: 210, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes -- Guarenty Puri zindagi ki hai kabhi kam hon ussi waqat wapis pure karwao waise to zida tar kam hote he ni hain-' },
     
-    { id: 3, name: 'TikTok Views Guarantee (1000)', price: 40, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes -- Guarenty Puri Zindagi ki hai ager kam ho jayen to dubara complete karwa sakte ho-' },
+    { id: 3, name: 'TikTok Views Lifetime Guarantee (1000)', price: 40, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes -- Guarenty Puri Zindagi ki hai ager kam ho jayen to dubara complete karwa sakte ho-' },
     { id: 4, name: 'Tiktok Views Cheap Rate (1000)', price: 15, min: 100, max: 5000, desc: 'High Quality Views -- Guarantee Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-- Start Time: 0-1 Hour.' },
     { id: 5, name: 'TikTok Followers Cheap Rate (1000)', price: 430, min: 100, max: 20000, desc: 'Tiktok Real Account Followers-- Instant Start -- Safe & Secure --Complete in 30 minutes --Guarenty Bilkul Bhi Ni Khatam Ya Kam Bhi Ho Sakte Hain-.' },
     { id: 6, name: 'Whatsapp Channel Members (1000)', price: 110, min: 50, max: 20000, desc: 'Whatsapp Channel Members (Global) Instant Start -- Fast Speed -- Complete In 20 minutes --HQ Profiles-- Guarenty Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-' },
-    { id: 7, name: 'Instagram Followers Guarantee (1000)', price: 950, min: 20, max: 1000000, desc: 'Best Instagram Followers (Old Acc) |500k/day| -- Fast Speed -- Complete In 7-9 hours -- Guarenty Puri Zindagi ki hai ager kam ho jayen to dubara complete karwa sakte ho-' },
-    { id: 8, name: 'Facebook Followers Guarantee (1000)', price: 170, min: 100, max: 30000, desc: 'Best Facebook Followers (Working in current update) |Max 100k| HQ Profiles--Day 20k-- Fast Speed -- Complete In 1 hours -- Guarenty Puri Zindagi ki hai ager kam ho jayen to dubara complete karwa sakte ho-' },
+    { id: 7, name: 'Instagram Followers Lifetime Guarantee (1000)', price: 950, min: 20, max: 1000000, desc: 'Best Instagram Followers (Old Account) |500k/day| -- Fast Speed -- Complete In 7-9 hours -- Guarenty Puri Zindagi ki hai ager kam ho jayen to dubara complete karwa sakte ho-' },
+    { id: 8, name: 'Facebook Followers Lifetime Guarantee (1000)', price: 170, min: 100, max: 30000, desc: 'Best Facebook Followers (Working in current update) |Max 100k| HQ Profiles--Day 20k-- Fast Speed -- Complete In 1 hours -- Guarenty Puri Zindagi ki hai ager kam ho jayen to dubara complete karwa sakte ho-' },
+    { id: 9, name: 'Facebook Views Lifetime Guarantee (1000)', price: 70, min: 100, max: 10000000, desc: 'Best Facebook Views Video/Reel All Link|Max Unlimited| -- Fast Speed -- Complete In 1-3 hours -- Guarenty Puri Zindagi ki hai ager kam ho jayen to dubara complete karwa sakte ho-' },
+    { id: 10, name: 'Facebook Likes 30days Guarantee (1000)', price: 100, min: 20, max: 500000, desc: 'Best Facebook Likes(High-quality Account) |200k/day| -- Fast Speed -- Complete with 30 minutes hours -- Guarenty 30 days ki hai ager 30 days se pehle kam ho jayen to dubara complete karwa sakte ho-' },
+    { id: 11, name: 'Facebook Random Comments Pakistani (1000)', price: 1250, min: 10, max: 100000, desc: 'Best Facebook Random Comments (High-quality Account) |1k/day| -- Instant Start -- Complete In 1hour 30 minutes-3hours --Guarenty Bilkul Bhi Ni Khatam Ya Kam Bhi Ho Sakte Hain-' },
+    { id: 12, name: 'Facebook Custom Comments Pakistani (1000)', price: 1350, min: 10, max: 100000, desc: 'Best Facebook Custom Comments (High-quality Account) |1k/day| -- Instant Start -- Complete In 2hour 50 minutes-5hours --Guarenty Bilkul Bhi Ni Khatam Ya Kam Bhi Ho Sakte Hain-' },
     
 ];
 
