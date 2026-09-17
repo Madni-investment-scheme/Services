@@ -113,7 +113,7 @@ app.get('/', (req, res) => {
         </head>
         <body>
             <div class="container">
-                <h2>Power Of M.Madni Ansari---Friday Offer Is Comming Soon</h2>
+                <h2>Power Of M.Madni Ansari---Friday Offer Is Coming Soon</h2>
                 <div class="notice">
                     <b>Important Notice:</b> Orders are processed within 1-2 hours. Please make sure your account is public before submitting the link And Ager kisi k likes,views wagera main se koi bhi guarantee wali cheez kam hoti hai to wo whatsapp per contact kare apni Thanks Shukriya Jazak Allah.
                 </div>
