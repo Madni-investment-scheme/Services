@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 const services = [
     
     { id: 1, name: 'TikTok Likes Cheap Rate (1000)', price: 80, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes -- Guarenty Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-' },
-    { id: 2, name: 'TikTok Likes Lifetime Guarantee(1000)', price: 210, min: 100, max: 500000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 8-10 hours -- Guarenty Puri zindagi ki hai kabhi kam hon ussi waqat wapis pure karwao waise to zida tar kam hote he ni hain-' },
+    { id: 2, name: 'TikTok Likes Lifetime Guarantee(1000)', price: 140, min: 100, max: 500000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30-45 minutes -- Guarenty Puri zindagi ki hai kabhi kam hon ussi waqat wapis pure karwao waise to zida tar kam hote he ni hain-' },
     { id: 3, name: 'TikTok Likes Lifetime Guarantee(1000)', price: 250, min: 100, max: 500000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes to 3hours -- Guarenty Puri zindagi ki hai kabhi kam hon ussi waqat wapis pure karwao waise to zida tar kam hote he ni hain-' },
     { id: 4, name: 'TikTok Views Lifetime Guarantee (1000)', price: 40, min: 100, max: 10000000, desc: 'Best Views Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes -- Guarenty Puri Zindagi ki hai ager kam ho jayen to dubara complete karwa sakte ho-' },
     { id: 5, name: 'Tiktok Views Cheap Rate (1000)', price: 10, min: 100, max: 5000, desc: 'High Quality Views -- Guarantee Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-- Start Time: 0-1 Hour.' },
