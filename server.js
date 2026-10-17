@@ -5,8 +5,7 @@ const PORT = process.env.PORT || 3000;
 // Services data with description and limits
 const services = [
     
-    { id: 1, name: 'Gemini 18 month pro (1000)', price: 350, min: 1, max: 10, desc: 'Gemini 18 month pro 5 TB Secure Cloud Storage--Creative Media & Video Generation--Developer & Research Tools--Integrated Workspace AI--Advanced AI Models & Expanded Limits--Massive Cloud Storage- Fast Speed -- Complete In 30 minutes --  📋 𝗗𝗘𝗦𝗖𝗥𝗜𝗣𝗧𝗜𝗢𝗡 ⚡️ Paste the received redeem link into your browser and click on “Activate Offer”. Your subscription/offer will then be activated successfully. ⚡️ Important Note:
-The redeem link must be used within 12 hours of receiving the order. Otherwise, the link may expire automatically.' },
+    { id: 1, name: 'Gemini 18 month pro (1000)', price: 350, min: 1, max: 100, desc: 'Gemini 18 month pro 5 TB Secure Cloud Storage--Creative Media & Video Generation--Developer & Research Tools--Integrated Workspace AI--Advanced AI Models & Expanded Limits--Massive Cloud Storage- Fast Speed -- Complete In 30 minutes --' },
     { id: 2, name: 'TikTok Combo Offer 🥳(1000)', price: 140, min: 1000, max: 10000, desc: '700 views+150 likes+100 followers+10 emoji comments+10 custom comments+30 random comments ye sirf 1k k order k liye hai 5k k liye ye sab 5x hoga-- Fast Speed -- Complete In 24 hours -- Guarenty Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-' },
     { id: 3, name: 'TikTok Likes Cheap Rate (1000)', price: 80, min: 100, max: 10000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes -- Guarenty Bilkul Bhi Ni Hai Khatam Ya Kam Bhi Ho Sakte Hain-' },
     { id: 4, name: 'TikTok Likes Lifetime Guarantee(1000)', price: 210, min: 100, max: 500000, desc: 'Best Likes Start in 0-5 minutes -- Fast Speed -- Complete In 30 minutes to 3hours -- Guarenty Puri zindagi ki hai kabhi kam hon ussi waqat wapis pure karwao waise to zida tar kam hote he ni hain-' },
